@@ -1,13 +1,12 @@
 // import { Fade } from 'react-awesome-reveal';
 // import { Helmet } from 'react-helmet';
 // import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import { useContext } from 'react'
-import Swal from 'sweetalert2'
-import { AuthContext } from '../../providers/AuthProvider'
+import { useContext } from "react"
+import Swal from "sweetalert2"
+import { AuthContext } from "../../providers/AuthProvider"
 
 const AddService = () => {
-
-    const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext)
 
   const handleAddService = (event) => {
     event.preventDefault()
@@ -23,58 +22,64 @@ const AddService = () => {
     const serviceProviderName = user?.displayName
     const serviceProvideImage = user?.photoURL
 
-
     const newAddService = {
       photo,
       serviceName,
       price,
       serviceArea,
       description,
+      serviceProviderEmail,
+      serviceProviderName,
+      serviceProvideImage,
     }
-    console.log(newAddService);
+    console.log(newAddService)
 
     // User name information
     const serviceProvider = {
-        serviceProviderEmail,
-        serviceProviderName,
-        serviceProvideImage
-
+      serviceProviderEmail,
+      serviceProviderName,
+      serviceProvideImage,
+      photo,
+      serviceName,
+      price,
+      serviceArea,
+      description,
     }
-    console.log(serviceProvider);
+    console.log(serviceProvider)
 
     // send data to the server
-    fetch('http://localhost:5000/addService',{
-        method: 'POST',
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body:JSON.stringify(newAddService)
+    fetch("http://localhost:5000/addService", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newAddService),
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        if(data.insertedId){
-            Swal.fire({
-                title: 'Success!',
-                text: 'Add Doctor Service Successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Add Doctor Service Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          })
         }
-    })
+      })
 
-    //Service Provider Details to send server to database 
-    fetch('http://localhost:5000/serviceProvider', {
-        method: 'POST',
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body:JSON.stringify(serviceProvider)
+    //Service Provider Details to send server to database
+    fetch("http://localhost:5000/serviceProvider", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(serviceProvider),
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+      })
   }
 
   return (
