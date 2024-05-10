@@ -40,7 +40,7 @@ const Navbar = () => {
   const navItems2 = (
     <>
       <li>
-        <Link to="">Add Service</Link>
+        <Link to="/addService">Add Service</Link>
       </li>
       <li>
         <Link to="">Manage Service</Link>
