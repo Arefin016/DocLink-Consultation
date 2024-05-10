@@ -1,6 +1,5 @@
 // import { Helmet } from "react-helmet"
 import { Link } from "react-router-dom"
-// import { AuthContext } from "../../providers/AuthProviders";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -10,7 +9,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
 
-    // const {createUser} = useContext(AuthContext);
     const {createUser} = useContext(AuthContext);
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
@@ -69,9 +67,6 @@ const Register = () => {
 
   return (
     <div data-aos="fade-up" data-aos-duration="2000">
-      {/* <Helmet>
-        <title>Register</title>
-      </Helmet> */}
       <div>
         <h2 className="text-3xl text-center font-bold text-blue-600">
           Please Register
