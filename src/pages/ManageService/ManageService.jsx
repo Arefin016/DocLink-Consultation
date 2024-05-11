@@ -16,12 +16,13 @@ const ManageService = () => {
 
   return (
     <div>
-      <h2 className="text-5xl">Your add service: {addService.length}</h2>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-2">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-2 lg:mt-10 mt-4 mb-4">
         {
             addService.map(service => <ManageServiceCard 
             key={service._id}
             service={service}
+            addService={addService}
+            setAddService={setAddService}
             ></ManageServiceCard>)
         }
       </div>
