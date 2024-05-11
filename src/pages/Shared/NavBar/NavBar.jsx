@@ -42,9 +42,9 @@ const Navbar = () => {
       <li>
         <Link to="/addService">Add Service</Link>
       </li>
-      <li>
-        <Link to="">Manage Service</Link>
-      </li>
+      {/* <li>
+        <Link to="/manageService">Manage Service</Link>
+      </li> */}
       <li>
         <Link to="">Booked-Services</Link>
       </li>
@@ -104,6 +104,8 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+
+        
         <div
           tabIndex={0}
           role="button"
@@ -146,11 +148,12 @@ const Navbar = () => {
           </svg>
         </label>
 
-        {user ? (
+        {user?.email ? <>
+          <li><Link className="text-red-500 mr-2 font-bold" to="/manageService">Manage Service</Link></li>
           <button onClick={handleSignOut} className="btn">
             Sign Out
           </button>
-        ) : (
+        </> : (
           <Link to="/login">
             <button className="btn btn-outline btn-primary">Login</button>
           </Link>

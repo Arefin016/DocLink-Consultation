@@ -6,7 +6,7 @@ import Swal from "sweetalert2"
 import { AuthContext } from "../../providers/AuthProvider"
 
 const AddService = () => {
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
 
   const handleAddService = (event) => {
     event.preventDefault()
@@ -18,7 +18,7 @@ const AddService = () => {
     const price = form.price.value
     const serviceArea = form.serviceArea.value
     const description = form.description.value
-    const serviceProviderEmail = user?.email
+    const email = user?.email
     const serviceProviderName = user?.displayName
     const serviceProvideImage = user?.photoURL
 
@@ -28,7 +28,7 @@ const AddService = () => {
       price,
       serviceArea,
       description,
-      serviceProviderEmail,
+      email,
       serviceProviderName,
       serviceProvideImage,
     }
@@ -36,7 +36,7 @@ const AddService = () => {
 
     // User name information
     const serviceProvider = {
-      serviceProviderEmail,
+      email,
       serviceProviderName,
       serviceProvideImage,
       photo,
