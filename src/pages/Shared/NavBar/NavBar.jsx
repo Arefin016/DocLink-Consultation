@@ -149,7 +149,7 @@ const Navbar = () => {
         </label>
 
         {user?.email ? <>
-          <li><Link className="text-red-500 mr-2 font-bold" to="/manageService">Manage Service</Link></li>
+          <button><Link className="text-red-500 mr-2 font-bold" to="/manageService">Manage Service</Link></button>
           <button onClick={handleSignOut} className="btn">
             Sign Out
           </button>
