@@ -10,6 +10,8 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateService from "../pages/ManageService/UpdateService";
 import Services from "../pages/Services/Services";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
+import BookNow from "../pages/BookNow/BookNow";
+import BookedServices from "../pages/BookedServices/BookedServices";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +54,17 @@ const router = createBrowserRouter([
             element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
             loader: ({params}) => fetch(`http://localhost:5000/addService/${params.id}`)
             
+        },
+        {
+            path: '/bookNow/:id',
+            element: <PrivateRoute><BookNow></BookNow></PrivateRoute>,
+            loader: ({params}) => fetch(`http://localhost:5000/addService/${params.id}`)
+
+
+        },
+        {
+            path: '/bookedServices',
+            element: <PrivateRoute><BookedServices></BookedServices></PrivateRoute>
         }
       ]
     },

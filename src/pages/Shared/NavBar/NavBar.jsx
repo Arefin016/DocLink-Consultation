@@ -45,12 +45,26 @@ const Navbar = () => {
       {/* <li>
         <Link to="/manageService">Manage Service</Link>
       </li> */}
-      <li>
-        <Link to="">Booked-Services</Link>
-      </li>
+      {/* <li>
+        <Link to="/bookedServices">Booked-Services</Link>
+      </li> */}
       <li>
         <Link to="">Service-To-Do</Link>
       </li>
+      {user?.email ? <>
+          <li><Link to="/bookedServices">Booked-Services</Link></li>
+          <li><Link to="/manageService">Manage Service</Link></li>
+          <button onClick={handleSignOut} className="">
+            
+          </button>
+        </> 
+        : 
+        (
+          <Link to="/login">
+            <button></button>
+           </Link>
+        )
+        }
     </>
   )
 
@@ -149,7 +163,7 @@ const Navbar = () => {
         </label>
 
         {user?.email ? <>
-          <button><Link className="text-red-500 mr-2 font-bold" to="/manageService">Manage Service</Link></button>
+          {/* <button><Link className="text-red-500 mr-2 font-bold" to="/manageService">Manage Service</Link></button> */}
           <button onClick={handleSignOut} className="btn">
             Sign Out
           </button>

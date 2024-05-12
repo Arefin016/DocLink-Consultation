@@ -1,11 +1,13 @@
-import { useLoaderData } from "react-router-dom"
+import { useContext } from "react"
+import { Link, useLoaderData } from "react-router-dom"
+import { AuthContext } from "../../providers/AuthProvider"
 
 const ServiceDetails = () => {
+    const {user} = useContext(AuthContext)
   const serviceDetails = useLoaderData()
   const {
     photo,
     serviceName,
-    price,
     serviceArea,
     description,
     serviceProviderName,
@@ -32,12 +34,18 @@ const ServiceDetails = () => {
           <p>Desc: {description}</p>
           <div className="avatar">
             <div className="w-24 rounded-xl">
-              <img src={serviceProvideImage} />
+              <img src={user?.photoURL} />
             </div>
           </div>
-          <p>Service Provider: {serviceProviderName}</p>
+          <p>Service Provider:{user?.displayName}</p>
 
-          <button className="btn btn-primary mt-5">Get Started</button>
+          
+          <Link to={`/bookNow/${_id}`}>
+          <button className="btn btn-primary mt-5">Book Now</button>
+          </Link>
+          <Link to="/services">
+          <button className="btn btn-accent ml-5">Back</button>
+          </Link>
         </div>
       </div>
     </div>
