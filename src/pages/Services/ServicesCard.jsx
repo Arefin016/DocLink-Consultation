@@ -25,7 +25,7 @@ const ServicesCard = ({ service }) => {
         <p className="font-bold">Price: {price}</p>
         <p className="font-bold">Service Area: {serviceArea}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Watch</button>
+          <button className="btn btn-accent">View Details</button>
         </div>
       </div>
     </div>
