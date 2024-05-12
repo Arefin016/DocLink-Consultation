@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const ServicesCard = ({ service }) => {
   const {
     photo,
@@ -7,6 +9,7 @@ const ServicesCard = ({ service }) => {
     description,
     serviceProviderName,
     serviceProvideImage,
+    _id
   } = service
   return (
     <div className="card card-side bg-red-300 shadow-xl border">
@@ -25,7 +28,9 @@ const ServicesCard = ({ service }) => {
         <p className="font-bold">Price: {price}</p>
         <p className="font-bold">Service Area: {serviceArea}</p>
         <div className="card-actions justify-end">
+          <Link to={`/service/${_id}`}>
           <button className="btn btn-accent">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import ManageService from "../pages/ManageService/ManageService";
 import PrivateRoute from "./PrivateRoute";
 import UpdateService from "../pages/ManageService/UpdateService";
 import Services from "../pages/Services/Services";
+import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,12 @@ const router = createBrowserRouter([
             path: '/services',
             element: <Services></Services>,
             loader: () => fetch('http://localhost:5000/addService')
+        },
+        {
+            path: '/service/:id',
+            element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+            loader: ({params}) => fetch(`http://localhost:5000/addService/${params.id}`)
+            
         }
       ]
     },
