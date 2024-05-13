@@ -5,9 +5,6 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
-
-
-
 const Register = () => {
 
     const {createUser} = useContext(AuthContext);
@@ -67,12 +64,12 @@ const Register = () => {
   }
 
   return (
-    <div data-aos="fade-up" data-aos-duration="2000">
+    <div className="lg:mt-10 mt-5 bg-gray-200 lg:py-10 mb-5" data-aos="fade-up" data-aos-duration="2000">
       <Helmet>
         <title>Register</title>
       </Helmet>
       <div>
-        <h2 className="text-3xl text-center font-bold text-blue-600">
+        <h2 className="text-3xl text-center font-bold text-black">
           Please Register
         </h2>
         <form

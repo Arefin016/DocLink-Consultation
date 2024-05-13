@@ -42,12 +42,6 @@ const Navbar = () => {
       <li>
         <Link to="/addService">Add Service</Link>
       </li>
-      {/* <li>
-        <Link to="/manageService">Manage Service</Link>
-      </li> */}
-      {/* <li>
-        <Link to="/bookedServices">Booked-Services</Link>
-      </li> */}
       <li>
         <Link to="">Service-To-Do</Link>
       </li>
@@ -69,7 +63,7 @@ const Navbar = () => {
   )
 
   return (
-    <div className="navbar bg-base-100 lg:h-20 mt-4 shadow-xl rounded-xl">
+    <div className="navbar bg-blue-200 lg:h-20 mt-4 shadow-xl rounded-xl">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -106,7 +100,7 @@ const Navbar = () => {
           <a className="text-xl">DocLink Consult</a>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden z-[1] lg:flex">
         <ul className="menu menu-horizontal px-1">
           {navItems}
           <li>
@@ -163,8 +157,7 @@ const Navbar = () => {
         </label>
 
         {user?.email ? <>
-          {/* <button><Link className="text-red-500 mr-2 font-bold" to="/manageService">Manage Service</Link></button> */}
-          <button onClick={handleSignOut} className="btn">
+          <button onClick={handleSignOut} className="btn btn-outline btn-primary">
             Sign Out
           </button>
         </> : (

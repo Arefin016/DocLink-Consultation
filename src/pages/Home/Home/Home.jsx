@@ -2,6 +2,7 @@ import Banner from "../Banner/Banner";
 import Doctor from "../../../../public/doctor.json"
 import Lottie from "lottie-react";
 import { Helmet } from "react-helmet-async";
+import PopularServices from "../PopularServices/PopularServices";
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
                 
             </div>
             <Banner></Banner>
-            <h2>This is Home </h2>
+            <PopularServices></PopularServices>
         </div>
     );
 };

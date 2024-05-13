@@ -1,0 +1,62 @@
+[
+  {
+    "service_image": "https://i.postimg.cc/Hs03fPbT/pexels-karolina-grabowska-6627379.jpg",
+    "service_name": "Primary Care Consultation",
+    "service_description": "General health check-ups and consultations with primary care physicians.",
+    "service_provider": {
+      "image": "https://example.com/provider1.jpg",
+      "name": "Doclink Healthcare"
+    },
+    "service_price": "2000"
+  },
+  {
+    "service_image": "https://i.postimg.cc/Y24R8CXK/pexels-shvets-production-7176319.jpg",
+    "service_name": "Specialist Referral",
+    "service_description": "Get referrals to specialized doctors for in-depth evaluation and treatment.",
+    "service_provider": {
+      "image": "https://example.com/provider2.jpg",
+      "name": "Doclink Healthcare"
+    },
+    "service_price": "2500"
+  },
+  {
+    "service_image": "https://i.postimg.cc/VNn1j83j/pexels-tima-miroshnichenko-8376177.jpg",
+    "service_name": "Telemedicine Consultation",
+    "service_description": "Convenient medical consultations via video or phone call.",
+    "service_provider": {
+      "image": "https://example.com/provider3.jpg",
+      "name": "Doclink Healthcare"
+    },
+    "service_price": "3000"
+  },
+  {
+    "service_image": "https://i.postimg.cc/fyXgPzfK/pexels-cottonbro-4098219.jpg",
+    "service_name": "Mental Health Counseling",
+    "service_description": "Confidential counseling sessions with licensed therapists.",
+    "service_provider": {
+      "image": "https://example.com/provider4.jpg",
+      "name": "Doclink Healthcare"
+    },
+    "service_price": "4000"
+  },
+  {
+    "service_image": "https://i.postimg.cc/QtW3XrqB/pexels-924587518-19992959.jpg",
+    "service_name": "Nutrition Consultation",
+    "service_description": "Personalized dietary advice for better health and wellness.",
+    "service_provider": {
+      "image": "https://example.com/provider5.jpg",
+      "name": "Doclink Healthcare"
+    },
+    "service_price": "5000"
+  },
+  {
+    "service_image": "https://example.com/service6.jpg",
+    "service_name": "Chronic Disease Management",
+    "service_description": "Ongoing support and monitoring for chronic health conditions.",
+    "service_provider": {
+      "image": "https://example.com/provider6.jpg",
+      "name": "Doclink Healthcare"
+    },
+    "service_price": "6000"
+  }
+]
