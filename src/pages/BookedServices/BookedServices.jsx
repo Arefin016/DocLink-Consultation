@@ -1,40 +1,54 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 import BookedServicesRow from "./BookedServicesRow"
+import Swal from "sweetalert2"
 
 const BookedServices = () => {
   const { user } = useContext(AuthContext)
   const [bookings, setBookings] = useState([])
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `http://localhost:5000/bookings?email=${user?.email}`
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data))
-  }, [url]);
+  }, [url])
 
-
-  const handleDelete = id => {
-    const proceed = confirm('Are you sure you want to delete');
-    if(proceed){
+  const handleDelete = (id) => {
+    console.log(id)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
         fetch(`http://localhost:5000/bookings/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'content-type' : 'application/json'
-            },
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+          },
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.deletedCount > 0){
-                alert('deleted Successful');
-                const remaining = bookings.filter(booking => booking._id !== id);
-                setBookings(remaining);
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data)
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Book Service has been deleted.",
+                icon: "success",
+              })
+              const remaining = bookings.filter((booking) => booking._id !== id)
+              setBookings(remaining)
             }
-        })
-    }
-}
+          })
+      }
+    })
+  }
 
   return (
     <div>
