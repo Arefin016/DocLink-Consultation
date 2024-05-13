@@ -12,7 +12,7 @@ const ServicesCard = ({ service }) => {
     _id
   } = service
   return (
-    <div className="card card-side bg-red-300 shadow-xl border">
+    <div className="card card-side bg-violet-200 shadow-xl border">
       <figure className="ml-4">
         <img src={photo} alt="Movie" />
       </figure>

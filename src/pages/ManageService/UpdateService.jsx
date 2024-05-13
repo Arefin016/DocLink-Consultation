@@ -71,7 +71,7 @@ const UpdateService = () => {
         }
 
     return (
-        <div className="bg-orange-600 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
+        <div className="bg-emerald-600 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
       <Helmet>
         <title>Update Service: {_id}</title>
       </Helmet>

@@ -3,6 +3,7 @@ import Doctor from "../../../../public/doctor.json"
 import Lottie from "lottie-react";
 import { Helmet } from "react-helmet-async";
 import PopularServices from "../PopularServices/PopularServices";
+import FrequentlyAsk from "../FrequentlyAsk/FrequentlyAsk";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <PopularServices></PopularServices>
+            <FrequentlyAsk></FrequentlyAsk>
         </div>
     );
 };

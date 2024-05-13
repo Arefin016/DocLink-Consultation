@@ -70,7 +70,7 @@ const AddService = () => {
   }
 
   return (
-    <div className="bg-blue-600 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
+    <div className="bg-green-500 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
       <Helmet>
         <title>Add Service</title>
       </Helmet>
