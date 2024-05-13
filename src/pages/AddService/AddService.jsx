@@ -47,27 +47,6 @@ const AddService = () => {
     }
     console.log(serviceProvider)
 
-    // send data to the server
-    fetch("http://localhost:5000/addService", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newAddService),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Add Doctor Service Successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          })
-        }
-      })
-
     //Service Provider Details to send server to database
     fetch("http://localhost:5000/serviceProvider", {
       method: "POST",
@@ -78,7 +57,15 @@ const AddService = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Add Doctor Service Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          })
+        }
       })
   }
 
