@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const UpdateService = () => {
 
@@ -47,27 +48,6 @@ const UpdateService = () => {
           description,
         }
         console.log(updateService)
-    
-        // send data to the server
-        // fetch("http://localhost:5000/addService", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(newAddService),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data)
-        //     if (data.insertedId) {
-        //       Swal.fire({
-        //         title: "Success!",
-        //         text: "Add Doctor Service Successfully",
-        //         icon: "success",
-        //         confirmButtonText: "Cool",
-        //       })
-        //     }
-        //   })
 
           fetch(`http://localhost:5000/serviceProvider/${_id}`, {
             method: "PUT",
@@ -92,9 +72,9 @@ const UpdateService = () => {
 
     return (
         <div className="bg-orange-600 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
-      {/* <Helmet>
-        <title>Add Craft Item</title>
-      </Helmet> */}
+      <Helmet>
+        <title>Update Service: {_id}</title>
+      </Helmet>
       <h2 className="text-3xl text-white text-center font-semibold">
         {/* Add {text}<Cursor></Cursor> */} Update Service
       </h2>

@@ -1,9 +1,14 @@
+import { Helmet } from "react-helmet-async";
+
 const BookedServicesRow = ({ booking, handleDelete }) => {
   const { currentUserName, serviceArea, servicename, price, date, photo, _id } =
     booking;
 
   return (
     <tr>
+        <Helmet>
+            <title>Booked Service: {_id}</title>
+        </Helmet>
       <th>
         <button onClick={() => handleDelete(_id)} className="btn btn-sm btn-circle">
           <svg

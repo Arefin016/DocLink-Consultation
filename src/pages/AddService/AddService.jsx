@@ -1,9 +1,9 @@
 // import { Fade } from 'react-awesome-reveal';
-// import { Helmet } from 'react-helmet';
 // import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { useContext } from "react"
 import Swal from "sweetalert2"
 import { AuthContext } from "../../providers/AuthProvider"
+import { Helmet } from "react-helmet-async";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -71,9 +71,9 @@ const AddService = () => {
 
   return (
     <div className="bg-blue-600 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
-      {/* <Helmet>
-        <title>Add Craft Item</title>
-      </Helmet> */}
+      <Helmet>
+        <title>Add Service</title>
+      </Helmet>
       <h2 className="text-3xl text-white text-center font-semibold">
         {/* Add {text}<Cursor></Cursor> */} Add Service
       </h2>

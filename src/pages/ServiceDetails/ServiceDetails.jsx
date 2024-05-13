@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { Link, useLoaderData } from "react-router-dom"
 import { AuthContext } from "../../providers/AuthProvider"
+import { Helmet } from "react-helmet-async"
 
 const ServiceDetails = () => {
     const {user} = useContext(AuthContext)
@@ -17,6 +18,9 @@ const ServiceDetails = () => {
 
   return (
     <div className="hero min-h-screen bg-cyan-200 my-10 rounded-lg border border-black">
+      <Helmet>
+        <title>Services: {_id}</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row">
         <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
         <div>

@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { FaGithub, FaGoogle } from "react-icons/fa"
 import { AuthContext } from "../../providers/AuthProvider"
+import { Helmet } from "react-helmet-async"
 
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext)
@@ -74,6 +75,9 @@ const Login = () => {
 
   return (
     <div data-aos="fade-down" data-aos-duration="2000">
+      <Helmet>
+      <title>Login</title>
+      </Helmet>
       <div>
         <h2 className="text-3xl text-center font-bold text-blue-600">
           Login Now

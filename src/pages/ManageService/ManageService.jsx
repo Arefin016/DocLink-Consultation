@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../providers/AuthProvider"
 import ManageServiceCard from "./ManageServiceCard"
+import { Helmet } from "react-helmet-async"
 
 const ManageService = () => {
   const { user } = useContext(AuthContext)
@@ -16,6 +17,9 @@ const ManageService = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Manage Service</title>
+      </Helmet>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-2 lg:mt-10 mt-4 mb-4">
         {
             addService.map(service => <ManageServiceCard 
