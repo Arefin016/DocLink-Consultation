@@ -11,7 +11,7 @@ const PopularServices = () => {
     },[])
 
     return (
-        <div className="mt-4">
+        <div className="lg:my-10">
            <div className="text-center my-5">
              <h3 className="text-4xl font-bold text-orange-600">Our Popular Services</h3>
             <p className="mt-2">Comprehensive primary care and specialist referrals.Accessible telemedicine, <br /> mental health, and nutrition consultations</p>

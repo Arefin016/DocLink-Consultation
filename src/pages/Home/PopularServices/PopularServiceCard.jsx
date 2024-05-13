@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 const PopularServiceCard = ({ service }) => {
   const { service_name, service_image, service_description, service_provider, service_price } = service
   return (
-    <div className="card w-96 bg-yellow-200 shadow-xl border border-black hover">
+    <div className="card lg:w-96 w-80 bg-yellow-200 shadow-xl border border-black hover">
       <figure>
-        <img src={service_image} alt="Shoes" />
+        <img className="lg:w-[382px] lg:h-[282px] w-[300px]" src={service_image} alt="Shoes" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{service_name}</h2>

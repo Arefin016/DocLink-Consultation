@@ -22,7 +22,7 @@ const ServiceDetails = () => {
         <title>Services: {_id}</title>
       </Helmet>
       <div className="hero-content flex-col lg:flex-row">
-        <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
+        <img src={photo} className="max-w-sm rounded-lg shadow-2xl lg:w-[384px] lg:h-[214px] w-72" />
         <div>
           <h1 className="text-3xl font-bold">Service Provider Information:</h1>
           <p>Name: {serviceProviderName}</p>

@@ -66,7 +66,7 @@ const Navbar = () => {
     <div className="navbar bg-blue-200 lg:h-20 mt-4 shadow-xl rounded-xl">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="p-0 btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -97,7 +97,7 @@ const Navbar = () => {
           <img className="lg:h-9 lg:w-9 h-14 w-14" src={logo} alt="" />
         </Link>
         <Link to="/">
-          <a className="text-xl">DocLink Consult</a>
+          <a className="lg:text-xl text-xs">DocLink Consult</a>
         </Link>
       </div>
       <div className="navbar-center hidden z-[1] lg:flex">
@@ -119,7 +119,7 @@ const Navbar = () => {
           role="button"
           className="btn btn-ghost btn-circle avatar"
         >
-          <div className="w-10 rounded-full">
+          <div className="lg:w-10 w-7 rounded-full">
             {user && (
               <span className="lg:tooltip-left" data-tip={user.displayName}>
                 <img alt="No Image" src={user.photoURL} />

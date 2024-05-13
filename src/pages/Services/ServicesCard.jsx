@@ -9,12 +9,16 @@ const ServicesCard = ({ service }) => {
     description,
     serviceProviderName,
     serviceProvideImage,
-    _id
+    _id,
   } = service
   return (
-    <div className="card card-side bg-violet-200 shadow-xl border">
-      <figure className="ml-4">
-        <img src={photo} alt="Movie" />
+    <div className="card card-side  bg-violet-200 shadow-xl flex lg:flex-row flex-col">
+      <figure>
+        <img
+          src={photo}
+          alt="Movie"
+          className="p-5"
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-blue-600 font-bold text-2xl">{serviceName}</h2>
