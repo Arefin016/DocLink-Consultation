@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom"
 import { FaGithub, FaGoogle } from "react-icons/fa"
 import { AuthContext } from "../../providers/AuthProvider"
 import { Helmet } from "react-helmet-async"
+import Swal from "sweetalert2"
 
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext)
@@ -41,6 +42,14 @@ const Login = () => {
         console.log(result.user)
         setSuccess("User Login Successfully")
 
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "User Login Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        })
+
         //navigate after login
         navigate(location?.state ? location.state : "/")
       })
@@ -54,6 +63,13 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user)
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "User Login Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        })
         navigate(location?.state ? location.state : "/")
       })
       .catch((error) => {
@@ -117,7 +133,18 @@ const Login = () => {
             {loginError && (
               <p className="text-red-700 text-center">{loginError}</p>
             )}
-            {success && alert("User Login Successfully")}
+            {success  
+            
+            // alert("User Login Successfully")
+            // Swal.fire({
+            //   position: "top",
+            //   icon: "success",
+            //   title: "User Created Successfully",
+            //   showConfirmButton: false,
+            //   timer: 1500
+            // })
+            
+            }
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>

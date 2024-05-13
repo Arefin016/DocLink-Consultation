@@ -1,9 +1,10 @@
 // import { Helmet } from "react-helmet"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
@@ -11,7 +12,7 @@ const Register = () => {
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const[showPassword, setShowPassword] = useState(false);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
   const handleRegister = (e) => {
@@ -54,6 +55,17 @@ const Register = () => {
     .then(result => {
         console.log(result.user);
         setSuccess('User Created Successfully');
+
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "User Created Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+        //navigation after register
+        navigate(location?.state ? location.state : "/login")
        
     })
     .catch(error => {
@@ -138,7 +150,7 @@ const Register = () => {
             registerError && <p className="text-red-700 text-center">{registerError}</p>
            }
            {
-            success && alert('User Created Successfully')
+             success
            }
           </div>
           <div className="form-control mt-6">
