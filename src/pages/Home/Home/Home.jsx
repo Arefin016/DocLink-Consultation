@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import { Helmet } from "react-helmet-async";
 import PopularServices from "../PopularServices/PopularServices";
 import FrequentlyAsk from "../FrequentlyAsk/FrequentlyAsk";
+import PatientFeedBack from "../PatientFeedBack/PatientFeedBack";
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
             <Banner></Banner>
             <PopularServices></PopularServices>
             <FrequentlyAsk></FrequentlyAsk>
+            <PatientFeedBack></PatientFeedBack>
         </div>
     );
 };
