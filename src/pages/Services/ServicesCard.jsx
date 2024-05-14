@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal"
 import { Link } from "react-router-dom"
 
 const ServicesCard = ({ service }) => {
@@ -12,7 +13,8 @@ const ServicesCard = ({ service }) => {
     _id,
   } = service
   return (
-    <div className="card card-side  bg-violet-200 shadow-xl flex lg:flex-row flex-col">
+    <Fade direction="right">
+      <div className="card card-side  bg-violet-200 shadow-xl flex lg:flex-row flex-col">
       <figure>
         <img
           src={photo}
@@ -38,6 +40,7 @@ const ServicesCard = ({ service }) => {
         </div>
       </div>
     </div>
+    </Fade>
   )
 }
 

@@ -2,6 +2,7 @@ import logo from "../../../assets/logo.jpg"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../../providers/AuthProvider"
 import { Link } from "react-router-dom"
+import { Fade } from "react-awesome-reveal"
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
@@ -63,7 +64,7 @@ const Navbar = () => {
   )
 
   return (
-    <div className="navbar bg-blue-200 lg:h-20 mt-4 shadow-xl rounded-xl">
+      <div className="navbar bg-blue-200 lg:h-20 mt-4 shadow-xl rounded-xl">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="p-0 btn btn-ghost lg:hidden">
@@ -97,7 +98,7 @@ const Navbar = () => {
           <img className="lg:h-9 lg:w-9 h-14 w-14" src={logo} alt="" />
         </Link>
         <Link to="/">
-          <a className="lg:text-xl text-xs">DocLink Consult</a>
+          <a className="lg:text-xl text-xs lg:ml-2">DocLink Consult</a>
         </Link>
       </div>
       <div className="navbar-center hidden z-[1] lg:flex">
@@ -167,6 +168,7 @@ const Navbar = () => {
         )}
       </div>
     </div>
+    
   )
 }
 
