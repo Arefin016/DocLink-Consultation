@@ -69,7 +69,8 @@ const router = createBrowserRouter([
         },
         {
             path: '/serviceToDo',
-            element: <PrivateRoute><ServiceToDo></ServiceToDo></PrivateRoute>
+            element: <PrivateRoute><ServiceToDo></ServiceToDo></PrivateRoute>,
+            loader: () => fetch('https://b9-a11-server-sigma.vercel.app/bookings')
         }
       ]
     },

@@ -1,9 +1,73 @@
-const ServiceToDo = () => {
-    return (
-        <div>
-            <h2>This is service to do</h2>
-        </div>
-    );
-};
+import { useLoaderData } from "react-router-dom"
+import ServiceToDoRow from "./ServiceToDoRow"
+import { Fade } from "react-awesome-reveal"
 
-export default ServiceToDo;
+const ServiceToDo = () => {
+  const serviceToDo = useLoaderData();
+
+  const handleBookingConfirm = id => {
+    fetch(`https://b9-a11-server-sigma.vercel.app/bookings/${id}`,{
+        method: 'PATCH',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify({status: 'completed'})
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        if(data.modifiedCount > 0){
+            //update state
+        }
+    })
+  }
+
+  return (
+    <Fade direction="right">
+        <h2 className="lg:my-10 my-5 text-3xl text-center font-bold">All Services To Do</h2>
+        <div className="overflow-x-auto bg-gray-300 lg:my-10 my-5 rounded-lg border border-black">
+          <table className="table">
+            {/* head */}
+            <thead className="text-black">
+              <tr>
+                <th>
+                  <button className="btn btn-sm btn-circle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </th>
+                <th>Name</th>
+                <th>Current User Name</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {serviceToDo.map((service) => (
+                <ServiceToDoRow
+                  key={service._id}
+                  service={service}
+                  handleBookingConfirm={handleBookingConfirm}
+                ></ServiceToDoRow>
+              ))}
+            </tbody>
+          </table>
+        </div>
+    </Fade>
+  )
+}
+
+export default ServiceToDo
