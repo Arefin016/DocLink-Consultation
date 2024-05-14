@@ -7,7 +7,7 @@ const ManageService = () => {
   const { user } = useContext(AuthContext)
   const [addService, setAddService] = useState([])
 
-  const url = `http://localhost:5000/serviceProvider?email=${user?.email}`
+  const url = `https://b9-a11-server-sigma.vercel.app/serviceProvider?email=${user?.email}`
 
   useEffect(() => {
     fetch(url)

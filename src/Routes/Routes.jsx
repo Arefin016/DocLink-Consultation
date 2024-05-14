@@ -42,23 +42,23 @@ const router = createBrowserRouter([
         {
             path: '/updateService/:id',
             element: <UpdateService></UpdateService>,
-            loader: ({params}) => fetch(`http://localhost:5000/serviceProvider/${params.id}`)
+            loader: ({params}) => fetch(`https://b9-a11-server-sigma.vercel.app/serviceProvider/${params.id}`)
         },
         {
             path: '/services',
             element: <Services></Services>,
-            loader: () => fetch('http://localhost:5000/addService')
+            loader: () => fetch('https://b9-a11-server-sigma.vercel.app/addService')
         },
         {
             path: '/service/:id',
             element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/addService/${params.id}`)
+            loader: ({params}) => fetch(`https://b9-a11-server-sigma.vercel.app/addService/${params.id}`)
             
         },
         {
             path: '/bookNow/:id',
             element: <PrivateRoute><BookNow></BookNow></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/addService/${params.id}`)
+            loader: ({params}) => fetch(`https://b9-a11-server-sigma.vercel.app/addService/${params.id}`)
 
 
         },

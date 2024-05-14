@@ -16,7 +16,7 @@ const ManageServiceCard = ({ service, addService, setAddService }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/serviceProvider/${_id}`, {
+        fetch(`https://b9-a11-server-sigma.vercel.app/serviceProvider/${_id}`, {
             method: 'DELETE'
         })
           .then((res) => res.json())

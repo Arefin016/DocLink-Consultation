@@ -49,7 +49,7 @@ const UpdateService = () => {
         }
         console.log(updateService)
 
-          fetch(`http://localhost:5000/serviceProvider/${_id}`, {
+          fetch(`https://b9-a11-server-sigma.vercel.app/serviceProvider/${_id}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",

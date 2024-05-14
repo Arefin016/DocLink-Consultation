@@ -48,7 +48,7 @@ const AddService = () => {
     console.log(serviceProvider)
 
     //Service Provider Details to send server to database
-    fetch("http://localhost:5000/serviceProvider", {
+    fetch("https://b9-a11-server-sigma.vercel.app/serviceProvider", {
       method: "POST",
       headers: {
         "content-type": "application/json",

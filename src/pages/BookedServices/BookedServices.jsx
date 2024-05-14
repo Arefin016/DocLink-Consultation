@@ -7,7 +7,7 @@ const BookedServices = () => {
   const { user } = useContext(AuthContext)
   const [bookings, setBookings] = useState([])
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`
+  const url = `https://b9-a11-server-sigma.vercel.app/bookings?email=${user?.email}`
 
   useEffect(() => {
     fetch(url)
@@ -27,7 +27,7 @@ const BookedServices = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://b9-a11-server-sigma.vercel.app/bookings/${id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",

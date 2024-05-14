@@ -51,7 +51,7 @@ const BookNow = () => {
     console.log(bookService);
 
     // send data to the server
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://b9-a11-server-sigma.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
