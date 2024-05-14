@@ -2,7 +2,6 @@ import logo from "../../../assets/logo.jpg"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../../providers/AuthProvider"
 import { Link } from "react-router-dom"
-import { Fade } from "react-awesome-reveal"
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
@@ -44,7 +43,7 @@ const Navbar = () => {
         <Link to="/addService">Add Service</Link>
       </li>
       <li>
-        <Link to="">Service-To-Do</Link>
+        <Link to="/serviceToDo">Service-To-Do</Link>
       </li>
       {user?.email ? <>
           <li><Link to="/bookedServices">Booked-Services</Link></li>
