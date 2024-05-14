@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import PopularServices from "../PopularServices/PopularServices";
 import FrequentlyAsk from "../FrequentlyAsk/FrequentlyAsk";
 import PatientFeedBack from "../PatientFeedBack/PatientFeedBack";
+import LearningSteps from "../LearningSteps/LearningSteps";
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <PopularServices></PopularServices>
+            <LearningSteps></LearningSteps>
             <FrequentlyAsk></FrequentlyAsk>
             <PatientFeedBack></PatientFeedBack>
         </div>
