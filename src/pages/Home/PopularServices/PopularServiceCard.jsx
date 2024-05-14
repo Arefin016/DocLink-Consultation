@@ -10,7 +10,7 @@ const PopularServiceCard = ({ service }) => {
     service_price,
   } = service
   return (
-    <Fade direction="right">
+    <Fade direction="right" data-aos-duration="2000">
       <div className="card lg:w-96 w-80 bg-yellow-100 shadow-xl border border-black hover">
         <figure>
           <img

@@ -3,10 +3,11 @@
 import { useContext } from "react"
 import Swal from "sweetalert2"
 import { AuthContext } from "../../providers/AuthProvider"
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async"
+import { Fade } from "react-awesome-reveal"
 
 const AddService = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext)
 
   const handleAddService = (event) => {
     event.preventDefault()
@@ -57,7 +58,7 @@ const AddService = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data)
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
@@ -70,97 +71,99 @@ const AddService = () => {
   }
 
   return (
-    <div className="bg-green-500 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
-      <Helmet>
-        <title>Add Service</title>
-      </Helmet>
-      <h2 className="text-3xl text-white text-center font-semibold">
-        {/* Add {text}<Cursor></Cursor> */} Add Service
-      </h2>
-      {/* <Fade direction='right'> */}
-      <form onSubmit={handleAddService}>
-        {/* form Image and Service Name row */}
-        <div className="lg:flex lg:flex-row flex-col gap-5">
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text">Image URL</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                placeholder="Image"
-                name="photo"
-                className="input input-bordered w-full"
-              />
-            </label>
+    <Fade direction="right">
+      <div className="bg-green-500 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
+        <Helmet>
+          <title>Add Service</title>
+        </Helmet>
+        <h2 className="text-3xl text-white text-center font-semibold">
+          {/* Add {text}<Cursor></Cursor> */} Add Service
+        </h2>
+        {/* <Fade direction='right'> */}
+        <form onSubmit={handleAddService}>
+          {/* form Image and Service Name row */}
+          <div className="lg:flex lg:flex-row flex-col gap-5">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Image URL</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  placeholder="Image"
+                  name="photo"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Service Name</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  placeholder="Service Name"
+                  name="serviceName"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text">Service Name</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                placeholder="Service Name"
-                name="serviceName"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* form Price and Service Area row */}
+          <div className="lg:flex lg:flex-row flex-col gap-5">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Price</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  placeholder="Price"
+                  name="price"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Service Area</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  placeholder="Service Area"
+                  name="serviceArea"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        {/* form Price and Service Area row */}
-        <div className="lg:flex lg:flex-row flex-col gap-5">
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text">Price</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                placeholder="Price"
-                name="price"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* form Description row */}
+          <div className="mb-8">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Description</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  placeholder="Description"
+                  name="description"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text">Service Area</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                placeholder="Service Area"
-                name="serviceArea"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-        </div>
-        {/* form Description row */}
-        <div className="mb-8">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Description</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                placeholder="Description"
-                name="description"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-        </div>
-        <input
-          type="submit"
-          value="Add"
-          className="btn text-black hover:bg-green-500 btn-block"
-        />
-      </form>
-      {/* </Fade> */}
-    </div>
+          <input
+            type="submit"
+            value="Add"
+            className="btn text-black hover:bg-green-500 btn-block"
+          />
+        </form>
+        {/* </Fade> */}
+      </div>
+    </Fade>
   )
 }
 

@@ -2,6 +2,8 @@ import { useContext } from "react"
 import { useLoaderData } from "react-router-dom"
 import Swal from "sweetalert2"
 import { AuthContext } from "../../providers/AuthProvider"
+import { Helmet } from "react-helmet-async"
+import { Fade } from "react-awesome-reveal"
 
 const BookNow = () => {
   const { user } = useContext(AuthContext)
@@ -73,10 +75,11 @@ const BookNow = () => {
   }
 
   return (
-    <div className="bg-orange-600 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
-      {/* <Helmet>
-        <title>Add Craft Item</title>
-      </Helmet> */}
+    <Fade direction="right">
+      <div className="bg-orange-600 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
+      <Helmet>
+        <title>Booked Now</title>
+      </Helmet>
       <h2 className="text-3xl text-white text-center font-semibold">
         {/* Add {text}<Cursor></Cursor> */} Book Service
       </h2>
@@ -263,6 +266,7 @@ const BookNow = () => {
       </form>
       {/* </Fade> */}
     </div>
+    </Fade>
   )
 }
 
