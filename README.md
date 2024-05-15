@@ -22,6 +22,6 @@ Visit the live site: [DocLink Consult](https://b9-a11-doclink.web.app)
 
 ## Feedback and Support
 
-We value your feedback! If you have any questions, suggestions, or concerns, please don't hesitate to reach out to our support team at support@doclinkconsult.com.
+We value your feedback! If you have any questions, suggestions, or concerns, please don't hesitate to reach out to our support team.
 
 Thank you for choosing DocLink Consult for your healthcare needs. We look forward to assisting you on your wellness journey!
