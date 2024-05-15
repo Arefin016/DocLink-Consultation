@@ -5,22 +5,6 @@ import { Fade } from "react-awesome-reveal"
 const ServiceToDo = () => {
   const serviceToDo = useLoaderData();
 
-  const handleBookingConfirm = id => {
-    fetch(`https://b9-a11-server-sigma.vercel.app/bookings/${id}`,{
-        method: 'PATCH',
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify({status: 'completed'})
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        if(data.modifiedCount > 0){
-            //update state
-        }
-    })
-  }
 
   return (
     <Fade direction="right">
@@ -60,7 +44,7 @@ const ServiceToDo = () => {
                 <ServiceToDoRow
                   key={service._id}
                   service={service}
-                  handleBookingConfirm={handleBookingConfirm}
+                //   handleBookingConfirm={handleBookingConfirm}
                 ></ServiceToDoRow>
               ))}
             </tbody>

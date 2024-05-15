@@ -13,6 +13,7 @@ import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import BookNow from "../pages/BookNow/BookNow";
 import BookedServices from "../pages/BookedServices/BookedServices";
 import ServiceToDo from "../pages/ServiceToDo/ServiceToDo";
+import ServiceToDoUpdate from "../pages/ServiceToDo/ServiceToDoUpdate";
 
 const router = createBrowserRouter([
     {
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
             path: '/serviceToDo',
             element: <PrivateRoute><ServiceToDo></ServiceToDo></PrivateRoute>,
             loader: () => fetch('https://b9-a11-server-sigma.vercel.app/bookings')
+        },
+        {
+            path: '/serviceToDo/:id',
+            element: <PrivateRoute><ServiceToDoUpdate></ServiceToDoUpdate></PrivateRoute>,
+            loader: ({params}) => fetch(`https://b9-a11-server-sigma.vercel.app/bookings/${params.id}`)
         }
       ]
     },
