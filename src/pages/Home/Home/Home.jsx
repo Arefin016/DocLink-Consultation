@@ -16,6 +16,9 @@ const Home = () => {
       })
     return (
         <div>
+            <div className="text-center lg:my-10 my-5">
+                <input className="border border-black p-2" type="Search" placeholder="Search" />
+            </div>
             <Helmet>
                 <title>Home</title>
             </Helmet>

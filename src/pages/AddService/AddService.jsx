@@ -72,6 +72,9 @@ const AddService = () => {
 
   return (
     <Fade direction="right">
+      <div className="text-center lg:my-10 my-5">
+                <input className="border border-black p-2" type="Search" placeholder="Search" />
+            </div>
       <div className="bg-green-500 lg:p-16 mb-4 border border-black lg:mt-10 rounded-xl">
         <Helmet>
           <title>Add Service</title>

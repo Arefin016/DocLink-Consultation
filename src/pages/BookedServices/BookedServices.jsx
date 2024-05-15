@@ -53,6 +53,9 @@ const BookedServices = () => {
 
   return (
     <Fade direction="right">
+      <div className="text-center lg:my-10 my-5">
+                <input className="border border-black p-2" type="Search" placeholder="Search" />
+            </div>
       <div>
         <div className="overflow-x-auto bg-slate-300 lg:my-10 my-5 rounded-lg border border-black">
           <table className="table">
