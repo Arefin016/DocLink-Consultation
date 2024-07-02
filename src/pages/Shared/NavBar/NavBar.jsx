@@ -45,6 +45,8 @@ const Navbar = () => {
       <li>
         <Link to="/serviceToDo">Service-To-Do</Link>
       </li>
+      <li><Link to="/bookedServices">Booked-Services</Link></li>
+          <li><Link to="/manageService">Manage Service</Link></li>
       {user?.email ? <>
           <li><Link to="/bookedServices">Booked-Services</Link></li>
           <li><Link to="/manageService">Manage Service</Link></li>
